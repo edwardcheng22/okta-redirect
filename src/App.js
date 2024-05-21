@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React, { useState } from "react";
+import "./Newtab/Newtab.css";
+
+function Newtab() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const domain = email.split('@')[1];
+    if (!domain) {
+      return;
+    };
+    // Send message to the background script to handle the OAuth flow
+    window.postMessage({
+      type: 'triggerOAuthOkta',
+      data: {
+        domain: domain,
+        clientId: '0oadhnhwlcsW6UfZw697',
+        oktaDomain: 'https://trial-4220785.okta.com'
+      }
+    }, '*');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }
 
-export default App;
+export default Newtab;
