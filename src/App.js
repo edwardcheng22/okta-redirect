@@ -1,9 +1,7 @@
-// src/App.js
-
 import React, { useState } from "react";
-import "./Newtab/Newtab.css";
+import './App.css'
 
-function Newtab() {
+function App() {
   const [email, setEmail] = useState('');
 
   const handleSubmit = async (e) => {
@@ -41,4 +39,4 @@ function Newtab() {
   );
 }
 
-export default Newtab;
+export default App;
