@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App.js';
 import OAuthCallback from './components/OAuthCallback.js';
@@ -10,7 +10,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/callback" element={<OAuthCallback />} />
+        <Route path="/okta-redirect" element={<OAuthCallback />} />
       </Routes>
     </Router>
   </React.StrictMode>,

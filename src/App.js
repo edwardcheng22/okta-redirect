@@ -15,23 +15,33 @@ function App() {
     if (!domain) {
       return;
     }
+
     const clientId = '0oadhnhwlcsW6UfZw697';
     const oktaDomain = 'https://trial-4220785.okta.com';
     const REDIRECT_URL = "https://edwardcheng22.github.io/okta-redirect"; 
     const codeVerifier = generateCodeVerifier();
     const codeChallenge = await generateCodeChallenge(codeVerifier);
     const state = generateState();
-    // construct authorization url
+
+    // Store codeVerifier and state in localStorage
+    localStorage.setItem('codeVerifier', codeVerifier);
+    localStorage.setItem('state', state);
+
+    // Construct authorization URL
     const authURL = `${oktaDomain}/oauth2/v1/authorize?` + 
               `client_id=${clientId}&` +
               `response_type=code&` + 
               `scope=openid&` +
-              `redirect_uri=${REDIRECT_URL}&` +
+              `redirect_uri=${encodeURIComponent(REDIRECT_URL)}&` +
               `code_challenge_method=S256&` + 
               `code_challenge=${codeChallenge}&` + 
               `state=${encodeURIComponent(state)}`;
-    // redirect the current web page to the auth url link
+
+    console.log('Authorization URL:', authURL);
+
+    // Redirect the current web page to the auth URL link
     window.location.href = authURL;
+    console.log(localStorage)
   };
 
   return (
