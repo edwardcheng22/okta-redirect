@@ -17,7 +17,7 @@ function App() {
     }
     const clientId = '0oadhnhwlcsW6UfZw697';
     const oktaDomain = 'https://trial-4220785.okta.com';
-    const REDIRECT_URL = "https://edwardcheng22.github.io/okta-redirect/"; 
+    const REDIRECT_URL = "https://edwardcheng22.github.io/okta-redirect"; 
     const codeVerifier = generateCodeVerifier();
     const codeChallenge = await generateCodeChallenge(codeVerifier);
     const state = generateState();

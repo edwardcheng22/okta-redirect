@@ -12,7 +12,7 @@ function OAuthCallback() {
       // Exchange the authorization code for an access token
       const clientId = '0oadhnhwlcsW6UfZw697';
       const oktaDomain = 'https://trial-4220785.okta.com';
-      const REDIRECT_URL = 'https://edwardcheng22.github.io/okta-redirect/';
+      const REDIRECT_URL = 'https://edwardcheng22.github.io/okta-redirect';
 
       fetch(`${oktaDomain}/oauth2/v1/token`, {
         method: 'POST',
