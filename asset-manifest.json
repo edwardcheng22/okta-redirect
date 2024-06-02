@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/okta-redirect/static/css/main.b0b80703.css",
-    "main.js": "/okta-redirect/static/js/main.b1729e7e.js",
+    "main.js": "/okta-redirect/static/js/main.b78bfb8d.js",
     "index.html": "/okta-redirect/index.html",
     "main.b0b80703.css.map": "/okta-redirect/static/css/main.b0b80703.css.map",
-    "main.b1729e7e.js.map": "/okta-redirect/static/js/main.b1729e7e.js.map"
+    "main.b78bfb8d.js.map": "/okta-redirect/static/js/main.b78bfb8d.js.map"
   },
   "entrypoints": [
     "static/css/main.b0b80703.css",
-    "static/js/main.b1729e7e.js"
+    "static/js/main.b78bfb8d.js"
   ]
 }
